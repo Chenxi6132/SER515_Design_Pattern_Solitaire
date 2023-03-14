@@ -1,29 +1,55 @@
+/*This java file is doing factory design pattern. This file create rank and suit, and convert suit and rank to string */
 public class CardFactory {
 
-	private final Suit suit;
+	public enum Suit {
+		SPADES,
+		HEARTS,
+		DIAMONDS,
+		CLUBS
+	}
+	Suit suit;
 
-	private final int value;
+	int value;
 
-	private final String valueOfName;
+	String valueOfName;
 
-	public static final String fullName;
+	public static String fullName;
 
-	private Suit suit;
-
-	private CardFactory cardFactory;
-
-	private Suit suit;
-
-	private DeckSingleton deckSingleton;
-
-	private DeckSingleton deckSingleton;
+	public CardFactory(Suit suit, int value) {
+		this.suit = suit;
+		this.value = value;
+		this.valueOfName = valueToString(value);
+		this.fullName = valueOfName + " " + suitToString(suit);
+	}
 
 	private String suitToString(Suit suit) {
-		return null;
+		switch (suit) {
+			case SPADES:
+				return "Spades";
+			case HEARTS:
+				return "Hearts";
+			case DIAMONDS:
+				return "Diamonds";
+			case CLUBS:
+				return "Clubs";
+			default:
+				return " ";
+		}
 	}
 
 	private String valueToString(int value) {
-		return null;
+		switch (value) {
+			case 11:
+				return "Jack";
+			case 12:
+				return "Queen";
+			case 13:
+				return "King";
+			case 14:
+				return "Ace";
+			default:
+				return String.valueOf(value);
+		}
 	}
 
 }
