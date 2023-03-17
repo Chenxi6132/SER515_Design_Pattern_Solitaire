@@ -127,15 +127,28 @@ public class Driver {
 		if (sizeofHand == 0)
 		{
 			System.out.println("Super Win");
+
+
+			System.out.println("Please enter 'q' for quit ");
+
+
+			System.out.println("If want to play again, please enter 'i' to initialized card ");
 		}
 		else if (sizeofHand <= 4)
 		{
 			System.out.println("You win");
+			System.out.println("Please enter 'q' for quit ");
+
+			System.out.println("If want to play again, please enter 'i' to initialized card ");
 		}
 		else
 		{
 			System.out.println("You loose, game over !!!");
-			System.out.println("Please enter 'q' for quit");
+			System.out.println("Please enter 'q' for quit ");
+//			DeckSingleton.hand.clear();
+//			DeckSingleton.cards.clear();
+			System.out.println("If want to play again, please enter 'i' to initialized card ");
+
 		}
 	}
 
@@ -145,11 +158,19 @@ public class Driver {
 			DeckSingleton.hand.add(DeckSingleton.hand.get(0));
 			DeckSingleton.hand.remove(0);
 			int countCards_O = DeckSingleton.hand.size();
-			Rules.basicRule(countCards_O);
-			int CountCards_N = DeckSingleton.hand.size();
-			if (countCards_O != CountCards_N) {
-				i = 0;
-				sizeofHand = DeckSingleton.hand.size();
+			if(countCards_O>= 4)
+			{
+				Rules.basicRule(countCards_O);
+				int CountCards_N = DeckSingleton.hand.size();
+				if (countCards_O != CountCards_N) {
+					i = 0;
+					sizeofHand = DeckSingleton.hand.size();
+			}
+			else
+			{
+				break;
+			}
+
 			}
 		}
 
@@ -166,11 +187,18 @@ public class Driver {
 			DeckSingleton.hand.add(DeckSingleton.hand.get(0));
 			DeckSingleton.hand.remove(0);
 			int countCards_O = DeckSingleton.hand.size();
-			Rules.IntermediateRule(countCards_O);
-			int CountCards_N = DeckSingleton.hand.size();
-			if (countCards_O != CountCards_N) {
-				i = 0;
-				sizeofHand = DeckSingleton.hand.size();
+			if(countCards_O >=4)
+			{
+				Rules.IntermediateRule(countCards_O);
+				int CountCards_N = DeckSingleton.hand.size();
+				if (countCards_O != CountCards_N) {
+					i = 0;
+					sizeofHand = DeckSingleton.hand.size();
+			}
+			else
+			{
+				break;
+			}
 			}
 		}
 
@@ -187,18 +215,24 @@ public class Driver {
 			DeckSingleton.hand.add(DeckSingleton.hand.get(0));
 			DeckSingleton.hand.remove(0);
 			int countCards_O = DeckSingleton.hand.size();
-			Rules.houseRule(countCards_O);
-			int CountCards_N = DeckSingleton.hand.size();
-			if (countCards_O != CountCards_N) {
-				i = 0;
-				sizeofHand = DeckSingleton.hand.size();
-			}
-		}
+			if(countCards_O >=4)
+			{
+				Rules.houseRule(countCards_O);
+				int CountCards_N = DeckSingleton.hand.size();
+				if (countCards_O != CountCards_N) {
+					i = 0;
+					sizeofHand = DeckSingleton.hand.size();}
 
+			}
+			else
+			{
+				break;
+			}
+			}
 		System.out.println("No more steps can move.");
 		int result = DeckSingleton.hand.size();
-
 		Result(result);
+		}
+
 	}
 
-}

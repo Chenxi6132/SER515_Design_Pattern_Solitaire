@@ -6,6 +6,10 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+import javax.swing.JButton;
 
     public class SpriteDriverGUI {
         public static void main(String avg[]) throws Exception {
@@ -29,6 +33,36 @@ import javax.swing.JLabel;
             JLabel lbl10c = new JLabel();
             lbl10c.setIcon(icon10c);
             frame.add(lbl10c);
+
+            JButton btnReset = new JButton("Reset Game");
+            btnReset.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    // TODO: implement reset game logic here
+                    JOptionPane.showMessageDialog(frame, "Game has been reset!");
+                }
+            });
+            frame.add(btnReset);
+
+            JButton btnRules = new JButton("Choose Rules");
+            btnRules.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    // TODO: implement choose rules logic here
+                    JOptionPane.showMessageDialog(frame, "You have chosen the rules!");
+                }
+            });
+            frame.add(btnRules);
+
+            JButton btnEnd = new JButton("End Game");
+            btnEnd.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    int choice = JOptionPane.showConfirmDialog(frame, "Are you sure you want to end the game?", "Confirm Exit", JOptionPane.YES_NO_OPTION);
+                    if (choice == JOptionPane.YES_OPTION) {
+                        System.exit(0);
+                    }
+                }
+            });
+            frame.add(btnEnd);
+
             frame.setVisible(true);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         }
