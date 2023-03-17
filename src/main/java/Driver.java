@@ -152,6 +152,21 @@ public class Driver {
 		}
 	}
 
+	public static String getResult(int handSize1) {
+		if (handSize1 == 0) {
+			return "Super Win";
+		}
+		else if(handSize1 <=4)
+		{
+			return "You Win";
+		}
+		else
+		{
+			return "You loose, game over !!!";
+		}
+	}
+
+
 	public static void lastStepBasic() {
 		int sizeofHand = DeckSingleton.hand.size();
 		for (int i = 0; i < sizeofHand; i++) {
