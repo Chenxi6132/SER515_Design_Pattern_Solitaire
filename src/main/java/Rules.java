@@ -83,19 +83,19 @@ public class Rules {
 		int last_2thelement = hand_sizeR - 2;
 		int last_3thelement = hand_sizeR - 3;
 		int last_4thelement = hand_sizeR - 4;
-		if (DeckSingleton.hand.get(last_element).suit == DeckSingleton.hand.get(last_4thelement).suit && Deck.hand.get(last_element).value == Deck.hand.get(last_2thelement).value) {
+		if (DeckSingleton.hand.get(last_element).suit == DeckSingleton.hand.get(last_4thelement).suit && DeckSingleton.hand.get(last_element).value == DeckSingleton.hand.get(last_2thelement).value) {
 			DeckSingleton.hand.subList(last_3thelement, hand_sizeR).clear();
 			System.out.println("remove last 3 cards");
 			System.out.println("after remove 3 cards, the left hand in your hand is ");
 			DeckSingleton.printHand();
 			System.out.println();
-		} else if (DeckSingleton.hand.get(last_element).suit == DeckSingleton.hand.get(last_4thelement).suit && Deck.hand.get(last_2thelement).value == Deck.hand.get(last_3thelement).value) {
+		} else if (DeckSingleton.hand.get(last_element).suit == DeckSingleton.hand.get(last_4thelement).suit && DeckSingleton.hand.get(last_2thelement).value == DeckSingleton.hand.get(last_3thelement).value) {
 			DeckSingleton.hand.subList(last_3thelement, hand_sizeR).clear();
 			System.out.println("remove last 3 cards");
 			System.out.println("after remove 3 cards, the left hand in your hand is ");
 			DeckSingleton.printHand();
 			System.out.println();
-		} else if (DeckSingleton.hand.get(last_element).suit == DeckSingleton.hand.get(last_4thelement).suit && Deck.hand.get(last_3thelement).value == Deck.hand.get(last_4thelement).value) {
+		} else if (DeckSingleton.hand.get(last_element).suit == DeckSingleton.hand.get(last_4thelement).suit && DeckSingleton.hand.get(last_3thelement).value == DeckSingleton.hand.get(last_4thelement).value) {
 			DeckSingleton.hand.subList(last_4thelement, hand_sizeR).clear();
 			System.out.println("remove first 3 cards");
 			System.out.println("after remove 3 cards, the left hand in your hand is ");
