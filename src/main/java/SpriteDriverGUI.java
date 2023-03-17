@@ -61,7 +61,6 @@ public class SpriteDriverGUI {
         JButton btnShuffle = new JButton("Shuffle Card");
         btnShuffle.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: implement choose rules logic here
                 DeckSingleton.shuffle();
                 JOptionPane.showMessageDialog(frame, "cards shuffled. You can shuffled as much as you wanted");
             }
@@ -71,7 +70,6 @@ public class SpriteDriverGUI {
         JButton btnRulesBasic = new JButton("Basic rules");
         btnRulesBasic.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: implement choose rules logic here
                 JOptionPane.showMessageDialog(frame, "You chosen the Basic rules! Let's start !!!");
                 Driver.dealCardBasic();
                 Driver.lastStepBasic();
@@ -93,7 +91,6 @@ public class SpriteDriverGUI {
         JButton btnRulesIntermediate = new JButton("Intermediate Rules");
         btnRulesIntermediate.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: implement choose rules logic here
                 JOptionPane.showMessageDialog(frame, "You chosen the Intermediate rules! Let's start !!!");
                 Driver.dealCardIntermediate();
                 Driver.lastStepIntermediate();
@@ -114,7 +111,6 @@ public class SpriteDriverGUI {
         JButton btnRulesHouse = new JButton("House Rules");
         btnRulesHouse.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // TODO: implement choose rules logic here
                 JOptionPane.showMessageDialog(frame, "You chosen the House rules! Let's start !!!");
                 Driver.dealCardHouseRule();
                 Driver.lastStepHouseRule();
